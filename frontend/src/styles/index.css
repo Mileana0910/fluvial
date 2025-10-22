@@ -17,11 +17,38 @@
   --color-border: #e2e8f0;
 }
 
+/* Estilos base responsive */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
+  min-height: 100vh;
 }
-/* En tu archivo index.css o App.css */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Previene que las imágenes se salgan */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom scroll */
 .custom-scroll {
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 #f1f5f9;
