@@ -2,7 +2,7 @@ import { TrendingUp, Award, Lightbulb, Globe, ChevronRight } from "lucide-react"
 import logoACB from "../../assets/images/logo-alianza.jpg";
 import logoUPTC from "../../assets/images/Logo-UPTC.jpg";
 import logoSENA from "../../assets/images/logo-sena.jpg";
-import logoTecnoparque from "../../assets/images/logo_Tecnoparque.jpg";
+import logoTecnoparque from "../../assets/images/logo_TecnoParque.jpg";
 
 export const HistoryModalContent = {
   1: (
