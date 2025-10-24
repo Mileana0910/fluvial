@@ -9,7 +9,7 @@ import logoManta from "../assets/images/logo-manta.jpg";
 import logoACB from "../assets/images/logo-alianza.jpg";
 import logoSENA from "../assets/images/logo-sena.jpg";
 import logoUPTC from "../assets/images/Logo-UPTC.jpg";
-import logoTecnoparque from "../assets/images/logo_Tecnoparque.jpg";
+import logoTecnoparque from "../assets/images/logo_TecnoParque.jpg";
 import { HistoryModalContent } from "../componentes/historia/HistoryModalContent";
 export default function HeroSection() {
   const [activeModal, setActiveModal] = useState(null);
