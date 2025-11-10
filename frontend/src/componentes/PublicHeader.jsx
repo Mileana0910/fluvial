@@ -31,8 +31,11 @@ export default function PublicHeader() {
         <Link to="/historia" className="hover:underline">Historia</Link>
         <Link to="/contacto" className="hover:underline">Contacto</Link>
       </nav>
+       {/* Ruta Gabriel - URL externa */}
       <a
-        href="/login"
+        href="https://catamaranbackend.onrender.com/login.html" 
+        target="_blank"
+        rel="noopener noreferrer"
         className="border border-blue-500 text-blue-500 px-4 py-2 rounded-full font-semibold hover:bg-blue-50 transition hidden md:block"
       >
         Iniciar Sesión
@@ -52,7 +55,9 @@ export default function PublicHeader() {
           <Link to="/historia" className="hover:underline" onClick={() => setIsOpen(false)}>Historia</Link>
           <Link to="/contacto" className="hover:underline" onClick={() => setIsOpen(false)}>Contacto</Link>
           <a
-            href="/login"
+            href="https://catamaranbackend.onrender.com/login.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="border border-blue-500 text-blue-500 px-4 py-2 rounded-full font-semibold hover:bg-blue-50 transition"
           >
             Iniciar Sesión
