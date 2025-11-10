@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Embarcaciones - MANTA</title>
+    <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="embarcaciones.css">
+    <link rel="stylesheet" href="../common-pagination.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="../logo-manta.jpg" alt="MANTA" class="logo">
+                <h1>SISTEMA DE GESTIÓN</h1>
+            </div>
+            <div class="user-info">
+                <span id="userFullName">Cargando...</span>
+                <button onclick="logout()" class="logout-btn">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="embarcaciones.html" class="nav-link active">Embarcaciones</a>
+            <a href="mantenimientos.html" class="nav-link">Mantenimientos</a>
+            <a href="pagos.html" class="nav-link">Pagos</a>
+            <a href="perfil.html" class="nav-link">Perfil</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <div class="page-header">
+                <h2>Mis Embarcaciones</h2>
+                <p>Información completa de tus embarcaciones</p>
+            </div>
+
+            <!-- Boats Table Section -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Mis Embarcaciones</h3>
+                    <span id="tableCount">0 embarcaciones</span>
+                </div>
+                <table class="boats-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Modelo</th>
+                            <th>Ubicación</th>
+                            <th>Precio</th>
+                            <th>Deuda Mantenimiento</th>
+                            <th>Deuda Barco</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="boatsTableBody">
+                        <!-- Boats will be loaded here -->
+                    </tbody>
+                </table>
+                <div id="noBoatsMessage" style="text-align: center; color: #6b7280; padding: 40px; display: none;">
+                    No tienes embarcaciones asignadas
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+                <div class="pagination-info">
+                    <span id="paginationInfo">Mostrando 0 de 0 embarcaciones</span>
+                </div>
+                <div class="pagination-controls">
+                    <button id="prevPageBtn" onclick="changePage(currentPage - 1)" class="pagination-btn" disabled>
+                        ← Anterior
+                    </button>
+                    <span id="currentPageInfo" class="page-info">Página 1</span>
+                    <button id="nextPageBtn" onclick="changePage(currentPage + 1)" class="pagination-btn" disabled>
+                        Siguiente →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Documents Modal -->
+    <div id="documentsModal" class="modal" style="display: none;">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h3>Documentos de la Embarcación</h3>
+                <button onclick="closeDocumentsModal()" class="close-btn">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="documents-section">
+                    <div class="upload-section">
+                        <h4>Subir Nuevo Documento</h4>
+                        <div class="form-group">
+                            <label for="documentName">Nombre del Documento</label>
+                            <input type="text" id="documentName" placeholder="Ej: Licencia de navegación">
+                        </div>
+                        <div class="form-group">
+                            <label for="documentFile">Archivo</label>
+                            <input type="file" id="documentFile">
+                        </div>
+                        <button onclick="uploadDocument(currentBoatId)" class="btn-primary">Subir Documento</button>
+                    </div>
+                    <div class="documents-list">
+                        <h4>Documentos Existentes</h4>
+                        <div id="documentsList" class="documents-container">
+                            <!-- Documents will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeDocumentsModal()" class="btn-secondary">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Mostrar el nombre del usuario
+        document.getElementById('userFullName').textContent = localStorage.getItem('fullName') || 'Usuario';
+    </script>
+    <script src="../common-pagination.js"></script>
+    <script src="embarcaciones.js"></script>
+</body>
+</html>
